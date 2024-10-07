@@ -6,7 +6,7 @@ import os
 
 
 # Define your global constants here
-INPUT_IMAGE_PATH = r"data\oct24\adjusted_eye_green_144_103_12col.png"
+INPUT_IMAGE_PATH = r"data\oct24_2\adjusted_eye_green_144_103_shifted_12_col.png"
 OUT_FOLDER = r"out"
 OUTPUT_IMAGE_PATH = r"out\converted"
 OUTPUT_COLORS_PDF = r"out\colors.pdf"
