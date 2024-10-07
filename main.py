@@ -1,12 +1,19 @@
 from PIL import Image
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
+import os
+
 
 
 # Define your global constants here
-INPUT_IMAGE_PATH = r"C:\Users\David.Khudaverdyan\Desktop\other\mama\new3\adjusted_eye_131x87_12col.png"
-OUTPUT_IMAGE_PATH = r"C:\Users\David.Khudaverdyan\Desktop\other\mama\new3\converted"
-OUTPUT_COLORS_PDF = r"C:\Users\David.Khudaverdyan\Desktop\other\mama\new3\colors.pdf"
+INPUT_IMAGE_PATH = r"data\new3\adjusted_eye_131x87_12col.png"
+OUT_FOLDER = r"out"
+OUTPUT_IMAGE_PATH = r"out\converted"
+OUTPUT_COLORS_PDF = r"out\colors.pdf"
+
+def create_out_folder_if_not_exists():
+    if not os.path.exists(OUT_FOLDER):
+        os.makedirs(OUT_FOLDER)   
 
 def number_to_letter(number):
     # Check if the number is within the range of 1 to 26
@@ -114,7 +121,7 @@ def output_rgb_mapping_to_pdf(index_to_color, filename=OUTPUT_COLORS_PDF):
 
     c.save()
 
-# Usage example
+create_out_folder_if_not_exists()
 reduced_and_resized_image = reduce_colors_and_resize(12, 131, 87)
 #print(count_unique_colors(reduced_and_resized_image))
 print_color_indices(reduced_and_resized_image)
