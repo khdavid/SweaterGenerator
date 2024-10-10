@@ -6,7 +6,7 @@ import os
 
 
 # Define your global constants here
-INPUT_IMAGE_PATH = r"data\oct24_2\adjusted_eye_green_144_103_shifted_12_col.png"
+INPUT_IMAGE_PATH = r"data\10.10.2024\adjusted_eye_green_144_103_shifted_13_col.png"
 OUT_FOLDER = r"out"
 OUTPUT_IMAGE_PATH = r"out\converted"
 OUTPUT_COLORS_PDF = r"out\colors.pdf"
@@ -57,7 +57,7 @@ def print_color_indices(image):
     index_to_color = {i // 3: tuple(palette[i:i+3]) for i in range(0, len(palette), 3)}
     
     for y in range(image.height):
-        print("{:2}".format(y + 1), end = ') ')
+        print("{:2}".format(y + 1), end = ')')
 
         # Variables to keep track of the current and previous colors and their counts
         previous_color = None
@@ -122,6 +122,6 @@ def output_rgb_mapping_to_pdf(index_to_color, filename=OUTPUT_COLORS_PDF):
     c.save()
 
 create_out_folder_if_not_exists()
-reduced_and_resized_image = reduce_colors_and_resize(12, 144, 103)
+reduced_and_resized_image = reduce_colors_and_resize(13, 144, 103)
 #print(count_unique_colors(reduced_and_resized_image))
 print_color_indices(reduced_and_resized_image)
