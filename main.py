@@ -85,7 +85,7 @@ def print_color_indices(image):
         print()  # Newline after printing all colors in the row
 
         # Print the color sequence summary for the line
-        #print(' '.join(color_sequence))
+        print(' '.join(color_sequence))
 
     
     
